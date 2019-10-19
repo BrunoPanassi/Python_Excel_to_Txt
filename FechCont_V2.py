@@ -65,7 +65,9 @@ for i in range(df.shape[0]):
         break
     
     print('Linha ', Linha)
-    f.write('\n')
+
+    if(Linha > 1):
+        f.write('\n')
     
     Linha += 1
     
@@ -76,7 +78,7 @@ for i in range(df.shape[0]):
             Empr = str(df.iloc[i, j])
             
             if (len(Empr) == 4): 
-                f.write('0' + Empr)
+                f.write("&SdtTexto.Add('0" + Empr)
             else:
                 BreakLoop = True
                 print('Codigo da Empresa está com o tamanho errado! Tamanho: ' + str(len(Empr)))
@@ -198,6 +200,17 @@ for i in range(df.shape[0]):
             else:
                 BreakLoop = True
                 print('A informação de Histórico está errada! Tamanho: ', str(len(Historico)))
+
+        #Interface
+        if (j == 10):
+            Interface = str(df.iloc[i, j])
+
+            if(Linha < df.shape[0]):
+                NextInterface = str(df.iloc[i+1, j])
+                if(Interface != NextInterface):
+                    f.write("\nDo 'Processar'")
+            elif(Linha == df.shape[0]):
+                f.write("\nDo 'Processar'")
             
 EndTime = time.perf_counter()
 ProcessTime = EndTime - BeginTime
