@@ -66,7 +66,7 @@ for i in range(df.shape[0]):
     
     print('Linha ', Linha)
 
-    if(Linha > 1):
+    if(Linha > 0):
         f.write('\n')
     
     Linha += 1
@@ -182,7 +182,7 @@ for i in range(df.shape[0]):
         if (j == 9):                
             Historico = str(df.iloc[i, j])
 
-            QuotationMark = "'"
+            QuotationMark = "')"
 
             if (len(Historico) > 50):
                 Historico = Historico.format(Historico, 50)
@@ -191,11 +191,11 @@ for i in range(df.shape[0]):
             elif (len(Historico) == 50):
                 Historico += QuotationMark
             else:
-                SpacesToFill = 51 - len(Historico)
+                SpacesToFill = 52 - len(Historico)
                 QuotationMark = QuotationMark.rjust(SpacesToFill)
                 Historico += QuotationMark
 
-            if (len(Historico) == 51):
+            if (len(Historico) == 52):
                 f.write(Historico)
             else:
                 BreakLoop = True
