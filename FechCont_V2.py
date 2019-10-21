@@ -82,9 +82,9 @@ for i in range(df.shape[0]):
             else:
                 BreakLoop = True
                 print('Codigo da Empresa está com o tamanho errado! Tamanho: ' + str(len(Empr)))
-            
+                
         #Credito ou Debito
-        if (j == 1):
+        elif(j == 1):
             CD = str(df.iloc[i, j])
             
             if (len(CD) == 1):
@@ -92,9 +92,9 @@ for i in range(df.shape[0]):
             else:
                 BreakLoop = True
                 print('Informação de Crédito ou Débito com tamanho errado! Tamanho: ' + str(len(CD)))
-            
+
         #Conta
-        if (j == 2):
+        elif(j == 2):
             Conta = str(df.iloc[i, j])
             
             if (len(Conta) == 10):
@@ -102,9 +102,9 @@ for i in range(df.shape[0]):
             else:
                 BreakLoop = True
                 print('Informação de Conta está com tamanho errado! Tamanho: ' + str(len(Conta)))
-        
+
         #Valor do Montante
-        if (j == 3):
+        elif(j == 3):
             ValorDoMontante = float(str(df.iloc[i, j]))
             
             ValorDoMontante = '{0:.2f}'.format(ValorDoMontante)
@@ -116,9 +116,9 @@ for i in range(df.shape[0]):
             else:
                 BreakLoop = True
                 print('O valor do montante está com o tamanho errado! Tamanho: ' + str(len(ValorDoMontante)))
-        
+
         #PEP
-        if (j == 4):
+        elif(j == 4):
             PEP = str(df.iloc[i, j])
             
             if (len(PEP) == 15):
@@ -127,9 +127,9 @@ for i in range(df.shape[0]):
             else:
                 BreakLoop = True
                 print('A informação de PEP está com o tamanho errado! Tamanho: ' + str(len(PEP)))
-        
+
         #Chave Referencia
-        if (j == 5):
+        elif(j == 5):
             ChaveRef = str(df.iloc[i, j])
             
             if (ChaveRef == 'nan'):
@@ -140,8 +140,9 @@ for i in range(df.shape[0]):
             else:
                 BreakLoop = True
                 print('A informação de Chave Ref. está com o tamanho errado! Tamanho: ' + str(len(ChaveRef)))
+
         #Data do Documento        
-        if (j == 6):
+        elif(j == 6):
             DataDoDocumento = str(df.iloc[i, j])
             #Atraso na velocidade da execução
             DataDoDocumento = dt.datetime.strptime(DataDoDocumento, '%Y-%m-%d %H:%M:%S').strftime('%Y%m%d')
@@ -153,7 +154,7 @@ for i in range(df.shape[0]):
                 print('A informação da Data do Documento está com o tamanho errado! Tamanho: ' + str(len(DataDoDocumento)))
                 
         #Contrato
-        if (j == 7):
+        elif(j == 7):
             Contrato = str(df.iloc[i, j])
             
             if (len(Contrato) < 6):
@@ -167,7 +168,7 @@ for i in range(df.shape[0]):
                 f.write(Contrato)
         
         #Data do Lançamento
-        if (j == 8):
+        elif(j == 8):
             DataDoLancamento = str(df.iloc[i, j])
             
             DataDoLancamento = dt.datetime.strptime(DataDoLancamento, '%Y-%m-%d %H:%M:%S').strftime('%d/%m/%Y')
@@ -179,7 +180,7 @@ for i in range(df.shape[0]):
                 print('A informação de Data do Lancamento está errada! Tamanho: ', str(len(DataDoLancamento)))
         
         #Histórico
-        if (j == 9):                
+        elif(j == 9):                
             Historico = str(df.iloc[i, j])
 
             QuotationMark = "')"
@@ -202,7 +203,7 @@ for i in range(df.shape[0]):
                 print('A informação de Histórico está errada! Tamanho: ', str(len(Historico)))
 
         #Interface
-        if (j == 10):
+        elif(j == 10):
             Interface = str(df.iloc[i, j])
 
             if(Linha < df.shape[0]):
