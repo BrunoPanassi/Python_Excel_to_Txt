@@ -213,11 +213,12 @@ for i in range(df.shape[0]):
         #Interface | 11º Column
         elif(j == 10):
             Interface = str(df.iloc[i, j])
+            Empr_OriginValue = str(df.iloc[i, 0])  
 
             if(Linha < df.shape[0]):
                 NextInterface = str(df.iloc[i+1, j])
                 NextEmpr      = str(df.iloc[i+1, 0])
-                if(Interface != NextInterface) or (Empr != NextEmpr):
+                if(Interface != NextInterface) or (Empr_OriginValue != NextEmpr):
                     f.write("\nDo 'Processar'")
             elif(Linha == df.shape[0]):
                 f.write("\nDo 'Processar'")
