@@ -216,7 +216,8 @@ for i in range(df.shape[0]):
 
             if(Linha < df.shape[0]):
                 NextInterface = str(df.iloc[i+1, j])
-                if(Interface != NextInterface):
+                NextEmpr      = str(df.iloc[i+1, 0])
+                if(Interface != NextInterface) or (Empr != NextEmpr):
                     f.write("\nDo 'Processar'")
             elif(Linha == df.shape[0]):
                 f.write("\nDo 'Processar'")
