@@ -21,4 +21,4 @@ The improvements that i did in the 2º algorithm:
 * **10º Column Validation** - 1º Algorithm: To fill in the missing spaces a loop it is made. | 2º Algorithm: Besides the loop begin replace by the function *rjust*, there is a validation to leave the value with a fixed size with the function *format*, even if the size exceeds this value.
 * **11º Column Validation** - 1º Algorithm: The validation here it is made in the 1º column, taking the values of last row to compare | 2º Algorithm: Since it´s the last column to check, it has to be applied the last rule, so the rule to compare values between the rows, it is made comparing the value of the next row.
 # Conclusion
-From a need to automate a task to a review and changes to improve a code, has be seen that some points need of an attention when is coding a algorithm.
+Besides of some changes in the code like the addition of a function, removing some unecessary lines, has be seen that some points need of an attention when is coding a algorithm, which is: there is a function that does this that i am doing? It is possible do this in a fewer lines of code? Can this process faster?  
