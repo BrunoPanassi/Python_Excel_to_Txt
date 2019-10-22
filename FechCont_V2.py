@@ -145,6 +145,10 @@ for i in range(df.shape[0]):
                 f.write(ChaveRef)
             elif (len(ChaveRef) == 12):
                 f.write(ChaveRef)
+            elif (len(ChaveRef) < 12):
+                ChaveRef = ChaveRef.ljust(12)
+                f.write(ChaveRef)
+                print('Aviso! A informação de ChaveRef está menor que 12! ChaveRef: ', str(ChaveRef))
             else:
                 BreakLoop = True
                 print('A informação de Chave Ref. está com o tamanho errado! Tamanho: ' + str(len(ChaveRef)))
