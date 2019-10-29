@@ -227,6 +227,7 @@ for i in range(df.shape[0]):
             elif(Linha == df.shape[0]):
                 f.write("\nDo 'Processar'")
             
+f.close()
 EndTime = time.perf_counter()
 ProcessTime = EndTime - BeginTime
 FormatTime = '{0:.2f}'.format(ProcessTime)
