@@ -18,18 +18,10 @@ parser.add_argument('-aba', help='O nome da aba da planilha', type=str)
 
 args = parser.parse_args()
 
-print(args.aba, args.planilha)
-
 SortedColumns = False
 SortedColumnsFlag = ''
 BreakLoop = False
 
-while SortedColumns == False:
-    SortedColumnsFlag = input('As Colunas interface e Empresa foram ordenadas de MENOR para MAIOR separadamente nessa mesma ordem? (S - SIM | N - Não)')
-    
-    if SortedColumnsFlag == 'S':
-        SortedColumns = True
-        
 def VerificaArquivo(Directory):
     Exists = False
     if os.path.isfile(Directory):
@@ -41,17 +33,17 @@ def VerificaArquivo(Directory):
 
 PathExists = False
 while PathExists == False:
-    Txt_Directory = args.txt
+    Txt_Directory = str(args.txt)
     PathExists = VerificaArquivo(Txt_Directory)
 
 PathExists = False
 while PathExists == False:
-    Excel_Directory = args.planilha
+    Excel_Directory = str(args.planilha)
     PathExists = VerificaArquivo(Excel_Directory)
     
 PathExists = False
 while PathExists == False:
-    SheetName = args.aba
+    SheetName = str(args.aba)
     
     try:
         Excel_Data = pd.read_excel(Excel_Directory, sheet_name = SheetName)
